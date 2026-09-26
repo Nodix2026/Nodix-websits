@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { resources } from '../data/resources';
+---
+<BaseLayout title="Resources | Nodix Solar PV Tools" description="PV installation tool guides, buying checklists and practical resources from Nodix.">
+  <section class="page-hero"><div class="kicker">NODIX / RESOURCES</div><h1>PV knowledge,<br/><em>without the noise.</em></h1><p>Practical resources for distributors, installers and professional buyers — focused on the tools used around cable preparation, connector assembly and field installation.</p></section>
+  <section class="section" style="padding-top:20px">
+    <div class="resource-grid">
+      {resources.map((resource) => <a class="resource resource-link" href={`/resources/${resource.slug}`}><small>{resource.type} / {resource.number}</small><h3>{resource.title}</h3><p>{resource.intro}</p><span>Read guide ↗</span></a>)}
+      <article class="resource"><small>FAQ / 04</small><h3>What should I send for a quotation?</h3><p>Product reference, quantity, cable size, connector system, packaging and target market are useful starting points.</p></article>
+      <article class="resource"><small>OEM / 05</small><h3>Private-label PV tool programs</h3><p>Define the product combination first, then work through logo application, packaging, documentation and quantity.</p></article>
+      <article class="resource"><small>BUYING / 06</small><h3>PV tool specification checklist</h3><p>Compare construction, compatibility, size range, packaging, documentation and sample availability before placing an order.</p></article>
+    </div>
+  </section>
+  <section class="cta-band"><div class="cta-inner"><h2>Need help defining a tool range?</h2><a class="btn" href="/contact">Start a Conversation ↗</a></div></section>
+</BaseLayout>

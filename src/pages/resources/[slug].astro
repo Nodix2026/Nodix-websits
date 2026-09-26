@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { resources } from '../../data/resources';
+export function getStaticPaths() {
+  return resources.map((resource) => ({ params: { slug: resource.slug }, props: { resource } }));
+}
+const { resource } = Astro.props;
+---
+<BaseLayout title={`${resource.title} | Nodix Solar PV Tools`} description={resource.intro}>
+  <section class="page-hero article-hero">
+    <div class="kicker">NODIX / RESOURCES / {resource.type}</div>
+    <h1>{resource.title}</h1>
+    <p>{resource.intro}</p>
+  </section>
+  <article class="article-body">
+    {resource.sections.map(([heading, text], index) => (
+      <section class="article-section">
+        <span class="article-index">0{index + 1}</span>
+        <div><h2>{heading}</h2><p>{text}</p></div>
+      </section>
+    ))}
+    <div class="article-note"><strong>Need a product specification?</strong><span>Send us the cable size, connector system, target quantity or reference product and we can review the suitable tool configuration.</span><a class="btn primary" href="/contact">Request a Quote ↗</a></div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,9 @@
+{
+  "name": "Nodix Solar PV Installation Tools",
+  "short_name": "Nodix PV Tools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090908",
+  "theme_color": "#090908",
+  "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}]
+}

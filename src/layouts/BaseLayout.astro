@@ -1,0 +1,71 @@
+---
+const { title = 'Nodix | Solar PV Installation Tools', description = 'Factory-backed solar PV installation tools for distributors, installers and professional buyers.', image = '/og-image.jpg' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nodixglobal.com').toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a09" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site ?? 'https://nodixglobal.com').toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site ?? 'https://nodixglobal.com').toString()} />
+    <meta property="og:site_name" content="Nodix" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Nodix',
+      url: 'https://nodixglobal.com',
+      description,
+      email: 'hello@nodixglobal.com'
+    })} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Nodix home"><span>NODIX</span><small>PV TOOLS</small></a>
+      <nav aria-label="Primary navigation">
+        <a href="/products">Products</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/resources">Resources</a>
+        <a href="/about">Our Factory</a>
+      </nav>
+      <a class="header-cta" href="/contact">Request a Quote <span>↗</span></a>
+    </header>
+    <main><slot /></main>
+    <div class="mobile-quote-bar"><a href="/contact">REQUEST A QUOTE <span>↗</span></a></div>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">NODIX<span> / PV TOOLS</span></div>
+          <p>Factory-backed solar PV installation tools for distributors, installers and professional buyers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/products">Products</a>
+          <a href="/solutions">Solutions</a>
+          <a href="/resources">Resources</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Nodix. All rights reserved.</span><span>Factory-Backed PV Installation Tools · <a href="mailto:hello@nodixglobal.com">hello@nodixglobal.com</a></span></div>
+    </footer>
+    <script is:inline>
+      const path = window.location.pathname;
+      document.querySelectorAll(".site-header nav a").forEach((link) => {
+        if (path === link.getAttribute("href") || (link.getAttribute("href") !== "/" && path.startsWith(link.getAttribute("href") + "/"))) link.setAttribute("aria-current", "page");
+      });
+    </script>
+  </body>
+</html>

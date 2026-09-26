@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { products } from '../../data/products';
+
+export function getStaticPaths() {
+  return products.map((product) => ({ params: { slug: product.slug }, props: { product } }));
+}
+
+const { product } = Astro.props;
+const productJsonLd = { '@context':'https://schema.org', '@type':'Product', name:product.name, sku:product.sku, description:product.description, brand:{'@type':'Brand', name:'Nodix'}, image:new URL(product.image, Astro.site ?? 'https://nodixglobal.com').toString() };
+---
+<BaseLayout title={`${product.name} | Nodix`} description={product.short}>
+  <section class="page-hero" style="padding-bottom:30px"><div class="tag">{product.category}</div><div class="product-code">{product.sku} / PRODUCT REFERENCE</div><div class="kicker" style="margin-top:18px">{product.eyebrow}</div></section>
+  <section class="product-detail">
+    <div class="product-detail-top">
+      <div class="detail-visual">{product.image ? <img src={product.image} alt={product.name} /> : <div class="image-placeholder"><span>PRODUCT IMAGE / COMING SOON</span></div>}<div class="image-index">NODIX / {product.eyebrow.split(" / ")[0]}</div></div>
+      <div class="detail-copy"><div class="kicker">SOLAR PV / PROFESSIONAL TOOL</div><h1>{product.name}</h1><p class="lead">{product.description}</p><div class="actions"><a class="btn primary" href={`/contact?product=${product.slug}`}>Request a Quote ↗</a><a class="btn" href="/products">All Products</a></div><div class="spec-table">{product.specs.map(([key,value])=><div class="spec-row"><span>{key}</span><strong>{value}</strong></div>)}</div></div>
+    </div>
+    <div class="buying-points"><div><span>01</span><strong>APPLICATION</strong><p>Confirm the cable, terminal, connector or installation task the tool is intended for.</p></div><div><span>02</span><strong>QUANTITY</strong><p>Samples, trial orders and repeat B2B quantities can be discussed by configuration.</p></div><div><span>03</span><strong>PACKAGING</strong><p>Standard packaging, private label or custom combinations can be reviewed with the factory.</p></div></div>
+    <div class="detail-bottom"><div><h2>Typical applications</h2><p>Solar PV installation · PV maintenance · Electrical field service · Distributor supply.</p><div class="application-tags"><span>INSTALLATION</span><span>FIELD SERVICE</span><span>B2B SUPPLY</span></div></div><div><h2>Need a different specification?</h2><p>Tell us your required cable size, connector system, packaging, branding or target quantity. We can discuss available configurations and sourcing options.</p><a class="btn" href="/contact">Discuss Your Requirement ↗</a></div></div>
+  </section>
+<script type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
+</BaseLayout>

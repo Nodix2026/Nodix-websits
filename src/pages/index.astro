@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { products } from '../data/products';
+import '../styles/global.css';
+---
+<BaseLayout>
+  <section class="hero">
+    <div>
+      <div class="kicker">FACTORY-BACKED / SOLAR PV INSTALLATION TOOLS</div>
+      <h1>Tools built for <em>the PV field.</em></h1>
+      <p>Professional hand tools for cable preparation, connector assembly and solar installation. A focused PV range backed by real factory production, practical sourcing and B2B supply.</p>
+      <div class="actions"><a class="btn primary" href="/products">Explore Products ↗</a><a class="btn" href="/contact">Request a Quote</a></div>
+    </div>
+    <div class="hero-visual hero-product"><div class="hero-product-label">FIELD KIT / NDX-PV-05</div><img src="/images/products/pv-installer-tool-kit.jpg" alt="Nodix PV installer tool kit" /><div class="hero-product-caption"><span>PV INSTALLER TOOL KIT</span><small>CONFIGURABLE FIELD TOOL SET</small></div></div>
+  </section>
+  <section class="buyer-entry">
+    <div><span>01</span><strong>BUYING A TOOL</strong><p>Start with a specific PV tool and request the applicable specification.</p><a href="/products">Browse Products ↗</a></div>
+    <div><span>02</span><strong>BUILDING A RANGE</strong><p>Select complementary tools for a distributor or installation program.</p><a href="/solutions#distributors">For Distributors ↗</a></div>
+    <div><span>03</span><strong>PRIVATE LABEL</strong><p>Discuss branding, packaging and tool combinations around your target quantity.</p><a href="/solutions#oem">Explore OEM ↗</a></div>
+  </section>
+  <section class="trust-strip">
+    <div><strong>2021</strong><span>FACTORY ESTABLISHED</span></div>
+    <div><strong>1,500 m²</strong><span>PRODUCTION FACILITY</span></div>
+    <div><strong>74</strong><span>TEAM MEMBERS</span></div>
+    <div><strong>CE · UKCA</strong><span>DOCUMENTED COMPLIANCE</span></div>
+  </section>
+  <section class="workflow">
+    <div class="section">
+      <div class="section-head"><h2>Built around<br/>the PV workflow</h2><p>One focused product family covering the core hand-tool stages of solar cable and connector installation.</p></div>
+      <div class="workflow-grid">
+        {['CUT','STRIP','CRIMP','CONNECT','INSTALL'].map((item,index)=><div class="step"><b>0{index+1}</b><h3>{item}</h3><p>{['Prepare clean cable ends.','Strip insulation consistently.','Crimp terminals with control.','Assemble and disconnect.','Take the essential tools to site.'][index]}</p></div>)}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-head"><h2>Professional<br/>PV tools</h2><p>Start with five focused products. Expand the range around real installation tasks, not unrelated categories.</p></div>
+    <div class="products-grid">
+      {products.map((product)=><a class="product-card" href={`/products/${product.slug}`}><div class="product-image">{product.image ? <img src={product.image} alt={product.name} loading="lazy" /> : <div class="image-placeholder"><span>IMAGE / COMING SOON</span></div>}</div><div class="product-meta"><small>{product.eyebrow}</small><h3>{product.name}</h3><p>{product.short}</p></div><div class="arrow">VIEW PRODUCT ↗</div></a>)}
+    </div>
+  </section>
+  <section class="section buyer-fit">
+    <div class="section-head"><h2>Built for<br/>B2B buyers.</h2><p>Whether you are building a distributor range, supplying installation teams or developing a private-label program, the buying conversation starts with the application.</p></div>
+    <div class="buyer-grid">
+      <a href="/solutions#distributors"><span>01</span><h3>Distributors</h3><p>Focused SKUs, packaging options and repeatable supply for your product range.</p><b>VIEW SOLUTION ↗</b></a>
+      <a href="/solutions#installers"><span>02</span><h3>Installers</h3><p>Practical field tools for cable preparation, connector handling and service work.</p><b>VIEW SOLUTION ↗</b></a>
+      <a href="/solutions#oem"><span>03</span><h3>OEM / Private Label</h3><p>Build a branded tool combination around your target market and quantity.</p><b>VIEW SOLUTION ↗</b></a>
+    </div>
+  </section>
+  <section class="section procurement-check">
+    <div class="section-head"><h2>What buyers<br/>need to know.</h2><p>Before a first order, the important questions are straightforward. We keep the conversation around the exact tool, application, quantity and documentation.</p></div>
+    <div class="procurement-grid">
+      <div><span>01</span><strong>PRODUCT FIT</strong><p>Confirm the cable, terminal or connector system the tool is intended to work with.</p></div>
+      <div><span>02</span><strong>QUANTITY</strong><p>Samples, trial quantities and repeat B2B orders can be discussed by configuration.</p></div>
+      <div><span>03</span><strong>DOCUMENTATION</strong><p>Request the applicable product specification and compliance documents for the exact model.</p></div>
+      <div><span>04</span><strong>PACKAGING</strong><p>Standard packaging, private label and custom tool combinations can be reviewed.</p></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="split">
+      <div class="dark-panel"><div class="kicker">OUR FACTORY</div><h3>Focused tools.<br/>Real production.</h3><p>Nodix is backed by a dedicated manufacturing facility established in 2021, focused on practical PV tools and export-oriented supply.</p><div class="number-list"><div><b>01</b><span>1,500 m² production facility</span></div><div><b>02</b><span>74 team members / 34 machines</span></div><div><b>03</b><span>100+ new products developed each year</span></div></div><a class="btn" href="/about">Explore Our Factory ↗</a></div>
+      <div class="dark-panel"><div class="kicker">OEM & CUSTOM</div><h3>Build the right tool combination.</h3><p>Need a private-label kit, distributor packaging or a different combination of installation tools? Tell us the application and target quantity.</p><a class="btn primary" href="/solutions">Explore Solutions ↗</a></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-head"><h2>PV resource<br/>center</h2><p>Useful technical content designed around the questions buyers and installers actually search for.</p></div>
+    <div class="resource-grid">
+      <a class="resource" href="/resources"><small>GUIDE / 01</small><h3>How to choose a PV crimping tool</h3><p>Key specifications to check before buying a photovoltaic crimping tool.</p></a>
+      <a class="resource" href="/resources"><small>GUIDE / 02</small><h3>PV cable cutting & stripping basics</h3><p>A practical overview of the cable preparation workflow.</p></a>
+      <a class="resource" href="/resources"><small>FAQ / 03</small><h3>What tools are needed for PV installation?</h3><p>A starting checklist for installers, distributors and service teams.</p></a>
+    </div>
+  </section>
+  <section class="cta-band"><div class="cta-inner"><h2>Need a PV tool supplier?</h2><a class="btn" href="/contact">Tell Us What You Need ↗</a></div></section>
+</BaseLayout>
