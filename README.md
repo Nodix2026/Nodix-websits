@@ -50,7 +50,7 @@ After the first successful deployment, connect the custom domain `nodixglobal.co
 - Web app manifest and favicon
 - Mobile persistent RFQ CTA
 - Product-specific RFQ preselection via `?product=`
-- RFQ form currently prepares a prefilled email to `hello@nodixglobal.com`
+- RFQ form currently prepares a prefilled email to `sales@nodixglobal.com`
 
 ## Before public launch
 
@@ -64,3 +64,25 @@ After the first successful deployment, connect the custom domain `nodixglobal.co
 ## Future upgrade
 
 The RFQ UI is intentionally independent of the delivery method. If a transactional form endpoint is added later, the same UI can be connected to a Cloudflare Pages Function or an approved form provider without redesigning the site.
+
+## Self-managed product media (V2.3)
+
+You can upload and maintain product images and videos yourself.
+
+- Images: `public/images/products/`
+- Videos: `public/videos/products/`
+- Product data: `src/data/products.ts`
+- Full instructions: `PRODUCT_UPLOAD_GUIDE.md`
+
+Upload media first, then add its path to the relevant product's `gallery` or `video` field. The product detail page automatically renders the gallery and optional MP4 video.
+
+## Self-managed product media (V2.3)
+
+You can upload and maintain product images and videos yourself.
+
+- Images: `public/images/products/`
+- Videos: `public/videos/products/`
+- Product data: `src/data/products.ts`
+- Full instructions: `PRODUCT_UPLOAD_GUIDE.md`
+
+Upload media first, then add its path to the relevant product's `gallery` or `video` field. The product detail page automatically renders the gallery and optional MP4 video.
