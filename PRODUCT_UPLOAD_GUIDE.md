@@ -87,29 +87,69 @@ specs: [
 
 Do not invent technical specifications. Confirm them with the factory first.
 
-## 5. Adding a new product
+## 5. Product catalogue hierarchy (V2.4)
+
+The catalogue now uses three practical levels:
+
+`Product Family → Tool Type → Product / SKU`
+
+Example:
+
+`Connector Tools → PV Crimping Tools → NDX-PV-01`
+
+Current product families:
+- `Cable Preparation`
+- `Connector Tools`
+- `Installation Kits`
+- `Maintenance Tools` (future range)
+
+Current tool types:
+- `PV Cable Cutters`
+- `PV Cable Strippers`
+- `PV Crimping Tools`
+- `PV Connector Tools`
+- `PV Installer Tool Kits`
+
+When adding a product, set both:
+```ts
+category: 'Connector Tools',
+subcategory: 'PV Crimping Tools',
+```
+
+### Colors, sizes and configurations
+If the same tool is available in different colors, sizes or package configurations, normally keep one product page and add entries to its `variants` array:
+
+```ts
+variants: [
+  { name: 'Standard', sku: 'NDX-PV-01A', image: '/images/products/pv-crimping-tool-standard.jpg' },
+  { name: 'Professional', sku: 'NDX-PV-01B', image: '/images/products/pv-crimping-tool-professional.jpg' }
+],
+```
+
+Create a separate product block when the tool itself, application or specification is materially different.
+
+### Adding a new tool type
+1. Add the subcategory to the correct `categories` entry in `src/data/products.ts`.
+2. Add the product with the matching `category` and `subcategory`.
+3. The Products page, category pages, subcategory pages and Products navigation will update automatically.
+
+## 6. Adding a new product
 
 Duplicate an existing product object in `src/data/products.ts`, then change:
 
 1. `slug`
 2. `name`
 3. `category`
-4. `eyebrow`
-5. `sku`
-6. `image`
-7. `gallery`
-8. `video`
-9. descriptions / highlights / specs
+4. `subcategory`
+5. `eyebrow`
+6. `sku`
+7. `image`
+8. `gallery`
+9. `video`
+10. `short`, `description`, `highlights` and `specs`
+11. `variants` when needed
 
-The product detail page is generated automatically from the product data.
-
-### Current categories
-
-- `Cable Preparation`
-- `Connector Tools`
-- `Installation Kits`
-
-If a new category is needed, add the category to `src/pages/products/index.astro` as well.
+The product detail page and catalogue hierarchy are generated automatically from the product data.
 
 ## 6. Publish changes
 

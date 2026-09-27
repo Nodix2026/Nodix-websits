@@ -76,13 +76,5 @@ You can upload and maintain product images and videos yourself.
 
 Upload media first, then add its path to the relevant product's `gallery` or `video` field. The product detail page automatically renders the gallery and optional MP4 video.
 
-## Self-managed product media (V2.3)
-
-You can upload and maintain product images and videos yourself.
-
-- Images: `public/images/products/`
-- Videos: `public/videos/products/`
-- Product data: `src/data/products.ts`
-- Full instructions: `PRODUCT_UPLOAD_GUIDE.md`
-
-Upload media first, then add its path to the relevant product's `gallery` or `video` field. The product detail page automatically renders the gallery and optional MP4 video.
+## Product catalogue hierarchy (V2.4)
+Products are organized as `category → subcategory → product`. Add new tool types under `categories` in `src/data/products.ts`; the navigation and catalogue pages will update automatically.
