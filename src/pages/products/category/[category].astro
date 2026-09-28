@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { categories, products, getCategory } from '../../../data/products';
+
+export function getStaticPaths() {
+  return categories.map((category) => ({ params: { category: category.slug }, props: { category } }));
+}
+
+const { category } = Astro.props;
+const categoryProducts = products.filter((product) => product.category === category.name);
+const subcategories = category.subcategories.map((subcategory) => ({
+  ...subcategory,
+  products: products.filter((product) => product.subcategory === subcategory.name)
+}));
+---
+<BaseLayout title={`${category.name} | Nodix Solar PV Tools`} description={`${category.description} Browse Nodix ${category.name.toLowerCase()} for solar PV installation and field service.`}>
+  <section class="page-hero category-page-hero">
+    <a class="back-link" href="/products">← Products</a>
+    <div class="kicker">NODIX / {category.number} / PRODUCT CATEGORY</div>
+    <h1>{category.name}.</h1>
+    <p>{category.description}</p>
+  </section>
+
+  <section class="section category-subdirectory">
+    <div class="section-head"><div><span class="kicker">PRODUCT TYPES</span><h2>Choose a tool type.</h2></div><p>Browse the specific tool group you need. Each type can contain multiple models, sizes, colors or configurations.</p></div>
+    {subcategories.length > 0 ? <div class="subcategory-grid">
+      {subcategories.map((subcategory) => <a class="subcategory-card" href={`/products/category/${category.slug}/${subcategory.slug}`}>
+        <span class="category-number">{String(subcategory.products.length).padStart(2, '0')} PRODUCTS</span>
+        <h3>{subcategory.name}</h3>
+        <p>{subcategory.description}</p>
+        <span class="category-arrow">VIEW TYPE ↗</span>
+      </a>)}
+    </div> : <div class="empty-category"><span class="kicker">RANGE IN DEVELOPMENT</span><h3>More {category.name.toLowerCase()} are coming.</h3><p>Tell us the tool or specification you are looking for and we can discuss available factory configurations.</p><a class="btn" href="/contact">Request a Quote ↗</a></div>}
+  </section>
+
+  {categoryProducts.length > 0 && <section class="section product-category-section">
+    <div class="category-heading"><div><span class="kicker">PRODUCTS IN THIS CATEGORY</span><h2>Current range.</h2></div><p>Products shown here are grouped by the category above. More models can be added without changing the site structure.</p></div>
+    <div class="products-grid">{categoryProducts.map((product) => <a class="product-card" href={`/products/${product.slug}`}>
+      <div class="product-image"><img src={product.image} alt={product.name} loading="lazy" /></div>
+      <div class="product-meta"><small>{product.sku}</small><h3>{product.name}</h3><p>{product.short}</p><div class="product-ref">{product.subcategory}</div></div>
+      <div class="arrow">VIEW PRODUCT ↗</div>
+    </a>)}</div>
+  </section>}
+
+  <section class="cta-band"><div class="cta-inner"><div><div class="kicker" style="color:#17120e">B2B / RFQ</div><h2>Need another<br/>configuration?</h2></div><a class="btn" href="/contact">Request a Quote ↗</a></div></section>
+</BaseLayout>

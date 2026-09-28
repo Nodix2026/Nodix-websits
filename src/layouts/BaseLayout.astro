@@ -1,4 +1,6 @@
 ---
+import { categories } from '../data/products';
+
 const { title = 'Nodix | Solar PV Installation Tools', description = 'Factory-backed solar PV installation tools for distributors, installers and professional buyers.', image = '/og-image.jpg' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nodixglobal.com').toString();
 ---
@@ -21,7 +23,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nodixglobal
     <meta name="twitter:image" content={new URL(image, Astro.site ?? 'https://nodixglobal.com').toString()} />
     <meta property="og:site_name" content="Nodix" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg?v=2" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -37,7 +39,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nodixglobal
     <header class="site-header">
       <a class="brand" href="/" aria-label="Nodix home"><span>NODIX</span><small>PV TOOLS</small></a>
       <nav aria-label="Primary navigation">
-        <a href="/products">Products</a>
+        <div class="nav-product-menu"><a href="/products" class="nav-product-trigger">Products <span>⌄</span></a><div class="nav-product-dropdown"><div class="nav-product-all"><a href="/products">All Product Categories →</a></div>{categories.map((category) => <div class="nav-product-group"><a class="nav-product-category" href={`/products/category/${category.slug}`}>{category.name}<span>→</span></a>{category.subcategories.length > 0 && <div class="nav-product-subcategories">{category.subcategories.map((subcategory) => <a href={`/products/category/${category.slug}/${subcategory.slug}`}>{subcategory.name}</a>)}</div>}</div>)}</div></div>
         <a href="/solutions">Solutions</a>
         <a href="/resources">Resources</a>
         <a href="/about">Our Factory</a>
@@ -59,7 +61,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nodixglobal
           <a href="/contact">Contact</a>
         </div>
       </div>
-      <div class="footer-bottom"><span>© {new Date().getFullYear()} Nodix. All rights reserved.</span><span>Factory-Backed PV Installation Tools · <a href="mailto:hello@nodixglobal.com">hello@nodixglobal.com</a></span></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} Nodix. All rights reserved.</span><span>Factory-Backed PV Installation Tools · <a href="mailto:sales@nodixglobal.com">sales@nodixglobal.com</a></span></div>
     </footer>
     <script is:inline>
       const path = window.location.pathname;

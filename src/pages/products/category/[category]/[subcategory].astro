@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { categories, getCategory, getSubcategory, products } from '../../../../data/products';
+
+export function getStaticPaths() {
+  return categories.flatMap((category) => category.subcategories.map((subcategory) => ({
+    params: { category: category.slug, subcategory: subcategory.slug },
+    props: { category, subcategory }
+  })));
+}
+
+const { category, subcategory } = Astro.props;
+const subcategoryProducts = products.filter((product) => product.subcategory === subcategory.name);
+---
+<BaseLayout title={`${subcategory.name} | Nodix Solar PV Tools`} description={`${subcategory.description} Browse Nodix ${subcategory.name.toLowerCase()} and available configurations.`}>
+  <section class="page-hero category-page-hero">
+    <div class="breadcrumb"><a href="/products">Products</a><span> / </span><a href={`/products/category/${category.slug}`}>{category.name}</a></div>
+    <div class="kicker">{category.number} / {subcategory.name.toUpperCase()}</div>
+    <h1>{subcategory.name}.</h1>
+    <p>{subcategory.description} Product models, sizes and configurations can be added under this type without creating a separate top-level category.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><div><span class="kicker">AVAILABLE PRODUCTS</span><h2>{subcategoryProducts.length} reference{subcategoryProducts.length === 1 ? '' : 's'}.</h2></div><p>Choose a specific model to review its media, description, specifications, configurations and RFQ options.</p></div>
+    <div class="products-grid">{subcategoryProducts.map((product) => <a class="product-card" href={`/products/${product.slug}`}>
+      <div class="product-image"><img src={product.image} alt={product.name} loading="lazy" /></div>
+      <div class="product-meta"><small>{product.sku}</small><h3>{product.name}</h3><p>{product.short}</p>{product.variants?.length > 0 && <div class="product-ref">{product.variants.length} CONFIGURATIONS</div>}</div>
+      <div class="arrow">VIEW PRODUCT ↗</div>
+    </a>)}</div>
+  </section>
+
+  <section class="section configuration-note"><div class="dark-panel"><span class="kicker">CONFIGURATIONS / VARIANTS</span><h3>Need a different size, color or specification?</h3><p>Where the same tool is available in different colors, sizes or package configurations, we can keep them under the same product family. Tell us your required configuration and target quantity.</p><a class="btn" href="/contact">Discuss a Configuration ↗</a></div></section>
+</BaseLayout>

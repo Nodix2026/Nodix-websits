@@ -10,14 +10,45 @@ const { product } = Astro.props;
 const productJsonLd = { '@context':'https://schema.org', '@type':'Product', name:product.name, sku:product.sku, description:product.description, brand:{'@type':'Brand', name:'Nodix'}, image:new URL(product.image, Astro.site ?? 'https://nodixglobal.com').toString() };
 ---
 <BaseLayout title={`${product.name} | Nodix`} description={product.short}>
-  <section class="page-hero" style="padding-bottom:30px"><div class="tag">{product.category}</div><div class="product-code">{product.sku} / PRODUCT REFERENCE</div><div class="kicker" style="margin-top:18px">{product.eyebrow}</div></section>
+  <section class="page-hero" style="padding-bottom:30px"><div class="breadcrumb"><a href="/products">Products</a><span> / </span><a href={`/products/category/${product.category.toLowerCase().replaceAll(' ', '-')}`}>{product.category}</a><span> / </span><span>{product.subcategory}</span></div><div class="product-code">{product.sku} / PRODUCT REFERENCE</div><div class="kicker" style="margin-top:18px">{product.eyebrow}</div></section>
   <section class="product-detail">
     <div class="product-detail-top">
-      <div class="detail-visual">{product.image ? <img src={product.image} alt={product.name} /> : <div class="image-placeholder"><span>PRODUCT IMAGE / COMING SOON</span></div>}<div class="image-index">NODIX / {product.eyebrow.split(" / ")[0]}</div></div>
-      <div class="detail-copy"><div class="kicker">SOLAR PV / PROFESSIONAL TOOL</div><h1>{product.name}</h1><p class="lead">{product.description}</p><div class="actions"><a class="btn primary" href={`/contact?product=${product.slug}`}>Request a Quote ↗</a><a class="btn" href="/products">All Products</a></div><div class="spec-table">{product.specs.map(([key,value])=><div class="spec-row"><span>{key}</span><strong>{value}</strong></div>)}</div></div>
+      <div class="detail-media">
+        <div class="detail-visual">
+          {product.image ? <img id="product-main-image" src={product.image} alt={product.name} /> : <div class="image-placeholder"><span>PRODUCT IMAGE / COMING SOON</span></div>}
+          <div class="image-index">NODIX / {product.eyebrow.split(" / ")[0]}</div>
+        </div>
+        {product.gallery?.length > 0 && <div class="media-thumbs" aria-label="Product image gallery">
+          {product.gallery.map((image, index) => <button class={`media-thumb ${index === 0 ? 'is-active' : ''}`} type="button" data-image={image} aria-label={`View ${product.name} image ${index + 1}`}>
+            <img src={image} alt={`${product.name} view ${index + 1}`} loading="lazy" />
+          </button>)}
+        </div>}
+        {product.video && <div class="product-video">
+          <video controls preload="metadata" poster={product.image} playsinline><source src={product.video} type="video/mp4" />Your browser does not support HTML video.</video>
+          <span>PRODUCT VIDEO</span>
+        </div>}
+      </div>
+      <div class="detail-copy"><div class="kicker">SOLAR PV / PROFESSIONAL TOOL</div><h1>{product.name}</h1><p class="lead">{product.description}</p><div class="actions"><a class="btn primary" href={`/contact?product=${product.slug}`}>Request a Quote ↗</a><a class="btn" href="/products">All Products</a></div>
+        <div class="product-description"><div class="kicker">PRODUCT DESCRIPTION</div><p>{product.description}</p></div>
+        {product.variants?.length > 0 && <div class="product-variants"><div class="kicker">AVAILABLE CONFIGURATIONS</div><div class="variant-list">{product.variants.map((variant) => <div class="variant-item"><strong>{variant.name}</strong><span>{variant.sku}</span></div>)}</div></div>}<div class="product-highlights"><div class="kicker">KEY HIGHLIGHTS</div><ul>{product.highlights.map((item) => <li>{item}</li>)}</ul></div>
+        <div class="spec-table"><div class="spec-title">SPECIFICATIONS</div>{product.specs.map(([key,value])=><div class="spec-row"><span>{key}</span><strong>{value}</strong></div>)}</div>
+      </div>
     </div>
     <div class="buying-points"><div><span>01</span><strong>APPLICATION</strong><p>Confirm the cable, terminal, connector or installation task the tool is intended for.</p></div><div><span>02</span><strong>QUANTITY</strong><p>Samples, trial orders and repeat B2B quantities can be discussed by configuration.</p></div><div><span>03</span><strong>PACKAGING</strong><p>Standard packaging, private label or custom combinations can be reviewed with the factory.</p></div></div>
     <div class="detail-bottom"><div><h2>Typical applications</h2><p>Solar PV installation · PV maintenance · Electrical field service · Distributor supply.</p><div class="application-tags"><span>INSTALLATION</span><span>FIELD SERVICE</span><span>B2B SUPPLY</span></div></div><div><h2>Need a different specification?</h2><p>Tell us your required cable size, connector system, packaging, branding or target quantity. We can discuss available configurations and sourcing options.</p><a class="btn" href="/contact">Discuss Your Requirement ↗</a></div></div>
   </section>
+<script>
+  const mainImage = document.querySelector('#product-main-image');
+  const thumbs = document.querySelectorAll('.media-thumb');
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const image = thumb.getAttribute('data-image');
+      if (!mainImage || !image) return;
+      mainImage.src = image;
+      thumbs.forEach((item) => item.classList.remove('is-active'));
+      thumb.classList.add('is-active');
+    });
+  });
+</script>
 <script type="application/ld+json" set:html={JSON.stringify(productJsonLd)} />
 </BaseLayout>

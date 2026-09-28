@@ -1,0 +1,35 @@
+NODIX V2.4 — GITHUB UPLOAD CHECKLIST
+
+This ZIP is prepared so its contents belong directly in the GitHub repository root.
+
+IMPORTANT:
+1. Unzip this ZIP first.
+2. Open the unzipped folder.
+3. Select ALL files and folders INSIDE the folder.
+4. Upload those contents into the ROOT of the GitHub repository (branch: main).
+5. Do NOT upload the outer folder itself as a single folder.
+6. When GitHub asks to commit, use a message such as:
+   Update Nodix V2.4 catalogue and contact details
+7. Wait for Cloudflare Pages to create a NEW Production deployment.
+8. Open the NEW deployment's *.nodix-websites.pages.dev URL first.
+
+Expected root files/folders:
+- public/
+- src/
+- PRODUCT_UPLOAD_GUIDE.md
+- README.md
+- astro.config.mjs
+- package.json
+- tsconfig.json
+- V2.4_UPLOAD_CHECKLIST.txt
+
+V2.4 checks:
+- Contact email: sales@nodixglobal.com
+- Footer email: sales@nodixglobal.com
+- Organization JSON-LD email: sales@nodixglobal.com
+- Favicon: /favicon.svg?v=2
+- Product catalogue has category -> subcategory -> product structure.
+- Product category routes exist under src/pages/products/category/.
+
+If GitHub already contains files with the same paths, they should be replaced by this version.
+Do not delete the repository or create a nested nodix-solar-v2.4 folder.

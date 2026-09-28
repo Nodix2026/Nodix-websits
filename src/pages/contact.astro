@@ -7,7 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <aside class="rfq-side">
       <div class="rfq-note"><span class="kicker">WHAT TO INCLUDE</span><h3>Make the first quote easier.</h3><p>You do not need to have every detail ready. Even a product photo, cable size, connector type or target quantity is enough to start.</p></div>
       <div class="rfq-list"><div><b>01</b><span>Product / tool type</span></div><div><b>02</b><span>Quantity or sample request</span></div><div><b>03</b><span>Specification / application</span></div><div><b>04</b><span>Packaging / branding, if required</span></div></div>
-      <div class="rfq-contact"><small>DIRECT EMAIL</small><a href="mailto:hello@nodixglobal.com">hello@nodixglobal.com</a><p>No portal or account is required. You can also email a product photo, specification or reference directly.</p></div>
+      <div class="rfq-contact"><small>DIRECT EMAIL</small><a href="mailto:sales@nodixglobal.com">sales@nodixglobal.com</a><p>No portal or account is required. You can also email a product photo, specification or reference directly.</p></div>
     </aside>
     <div class="form-wrap">
       <form class="form-grid" id="rfq-form">
@@ -62,7 +62,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       `Requirement:`,
       `${data.get('message') || ''}`
     ].join('\n');
-    window.location.href = `mailto:hello@nodixglobal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:sales@nodixglobal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     if (status) status.textContent = 'Inquiry prepared. Complete and send it from your email client.';
   });
 </script>

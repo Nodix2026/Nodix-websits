@@ -1,10 +1,31 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { products } from '../../data/products';
+import { categories, products } from '../../data/products';
+
+const categoryCount = (categoryName) => products.filter((product) => product.category === categoryName).length;
 ---
-<BaseLayout title="Products | Nodix Solar PV Tools" description="Solar PV installation tools including crimping tools, cable strippers, cable cutters, connector tools and installer kits.">
-  <section class="page-hero"><div class="kicker">NODIX / PRODUCTS</div><h1>Professional<br/>PV tools.</h1><p>A focused range for cable preparation, connector assembly and solar installation. Each product has a clear reference so specifications, samples and quotations can be discussed precisely.</p></section>
-  <section class="product-intro"><div><span class="kicker">A FOCUSED RANGE</span><h2>Built around the<br/>PV installation workflow.</h2></div><p>We keep the range deliberately narrow: fewer generic products, more attention to the tools installers actually use. Start with an individual tool, or ask us to build a compact kit around your market and quantity.</p></section>
-  <section class="section" style="padding-top:34px"><div class="category-strip"><span>01 / CABLE PREPARATION</span><span>02 / CONNECTOR TOOLS</span><span>03 / INSTALLATION KITS</span></div><div class="products-grid">{products.map((product)=><a class="product-card" href={`/products/${product.slug}`}><div class="product-image">{product.image ? <img src={product.image} alt={product.name} loading="lazy" /> : <div class="image-placeholder"><span>IMAGE / COMING SOON</span></div>}</div><div class="product-meta"><small>{product.eyebrow}</small><h3>{product.name}</h3><p>{product.short}</p><div class="product-ref">{product.sku}</div></div><div class="arrow">VIEW PRODUCT ↗</div></a>)}</div></section>
-  <section class="cta-band"><div class="cta-inner"><div><div class="kicker" style="color:#17120e">B2B / RFQ</div><h2>Need a specific<br/>configuration?</h2></div><a class="btn" href="/contact">Request a Quote ↗</a></div></section>
+<BaseLayout title="Products | Nodix Solar PV Tools" description="Solar PV installation tools organized by product category, tool type and product reference for distributors, installers and professional buyers.">
+  <section class="page-hero"><div class="kicker">NODIX / PRODUCTS</div><h1>Professional<br/>PV tools.</h1><p>A structured product catalogue for cable preparation, connector tools and installation kits. Browse by tool family first, then by specific product type and model.</p></section>
+
+  <section class="section category-directory">
+    <div class="section-head"><div><span class="kicker">PRODUCT CATEGORIES</span><h2>Choose a tool family.</h2></div><p>Start with the type of PV work you need to support. Each family can grow into multiple tool types, models and configurations.</p></div>
+    <div class="category-cards category-cards-four">
+      {categories.map((category) => <a class="category-card" href={`/products/category/${category.slug}`}>
+        <span class="category-number">{category.number} / {String(categoryCount(category.name)).padStart(2, '0')} PRODUCTS</span>
+        <div><h3>{category.name}</h3><p>{category.description}</p></div>
+        <div class="category-card-footer"><span>{category.subcategories.length} product types</span><span class="category-arrow">VIEW CATEGORY ↗</span></div>
+      </a>)}
+    </div>
+  </section>
+
+  <section class="section catalogue-map">
+    <div class="section-head"><div><span class="kicker">CATALOGUE STRUCTURE</span><h2>Category → type → product.</h2></div><p>This structure lets us add different sizes, colors, professional versions and tool kits without turning the Products page into one long list.</p></div>
+    <div class="catalogue-levels">
+      <div><span>01</span><strong>PRODUCT FAMILY</strong><p>Cable Preparation / Connector Tools / Installation Kits / Maintenance Tools</p></div>
+      <div><span>02</span><strong>TOOL TYPE</strong><p>PV Crimping Tools / Cable Strippers / Cable Cutters / Installer Tool Kits</p></div>
+      <div><span>03</span><strong>PRODUCT / CONFIGURATION</strong><p>Specific SKU, model, size, color, package or professional configuration.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-band"><div class="cta-inner"><div><div class="kicker" style="color:#17120e">B2B / RFQ</div><h2>Can't find the<br/>right configuration?</h2></div><a class="btn" href="/contact">Request a Quote ↗</a></div></section>
 </BaseLayout>
