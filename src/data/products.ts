@@ -71,7 +71,12 @@ export const products = [
     eyebrow: '01 / PV CRIMPING TOOLS',
     sku: 'NDX-PV-01',
     image: '/images/products/pv-crimping-tool.jpg',
-    gallery: ['/images/products/pv-crimping-tool.jpg'],
+  
+    gallery: [
+           '/images/products/pv-crimping-tool-size.jpg',
+           '/images/products/pv-crimping-tool-detail.jpg',
+           '/images/products/pv-crimping-tool-use.jpg',
+],
     video: '',
     short: 'Ratchet crimping tool for professional photovoltaic cable and connector assembly.',
     description: 'A practical hand tool for repeatable PV terminal crimping in solar installation and field service work.',
@@ -97,17 +102,10 @@ export const products = [
     sku: 'NDX-PV-02',
    image: '/images/products/pv-cable-stripper.jpg',
 
-images: [
-  '/images/products/pv-cable-stripper-detail.jpg',
-  '/images/products/pv-cable-stripper-size.jpg',
-  '/images/products/pv-cable-stripper-use.jpg',
-],
-
-gallery: [
-  '/images/products/pv-cable-stripper.jpg',
-  '/images/products/pv-cable-stripper-detail.jpg',
-  '/images/products/pv-cable-stripper-size.jpg',
-  '/images/products/pv-cable-stripper-use.jpg',
+   gallery: [
+          '/images/products/pv-cable-stripper-detail.jpg',
+          '/images/products/pv-cable-stripper-size.jpg',
+          '/images/products/pv-cable-stripper-use.jpg',
 ],
     video: '',
     short: 'Precision stripping tool designed for common photovoltaic cable sizes.',
@@ -130,7 +128,12 @@ gallery: [
     eyebrow: '03 / PV CABLE CUTTERS',
     sku: 'NDX-PV-03',
     image: '/images/products/pv-cable-cutter.jpg',
-    gallery: ['/images/products/pv-cable-cutter.jpg'],
+
+    gallery: [
+          '/images/products/pv-cable-cutter-detail.jpg',
+          '/images/products/pv-cable-cutter-size.jpg',
+          '/images/products/pv-cable-cutter-use.jpg',
+],
     video: '',
     short: 'Clean-cutting hand tool for photovoltaic cable preparation and field installation.',
     description: 'A compact cutting tool for clean cable preparation at installation sites, workshops and service locations.',
@@ -152,7 +155,12 @@ gallery: [
     eyebrow: '04 / PV CONNECTOR TOOLS',
     sku: 'NDX-PV-04',
     image: '/images/products/pv-connector-tools.jpg',
-    gallery: ['/images/products/pv-connector-tools.jpg'],
+
+    gallery: [
+           '/images/products/pv-connector-tools-use.jpg',
+           '/images/products/pv-connector-tools-detail.jpg',
+           '/images/products/pv-connector-tools-size.jpg',
+],
     video: '',
     short: 'Assembly and disconnect tools for PV connector systems used in field installation.',
     description: 'Practical connector-handling tools for assembly, tightening and disconnection during PV installation and service work.',
@@ -174,7 +182,12 @@ gallery: [
     eyebrow: '05 / PV INSTALLER TOOL KITS',
     sku: 'NDX-PV-05',
     image: '/images/products/pv-installer-tool-kit.jpg',
-    gallery: ['/images/products/pv-installer-tool-kit.jpg'],
+
+    gallery: [
+          '/images/products/pv-installer-tool-kit-use.jpg',
+          '/images/products/pv-installer-tool-kit-size.jpg',
+          '/images/products/pv-installer-tool-kit-detail.jpg',
+],
     video: '',
     short: 'A practical selection of essential hand tools for solar PV installation work.',
     description: 'A configurable tool combination for distributors, installers and service teams that need a compact PV field kit.',
