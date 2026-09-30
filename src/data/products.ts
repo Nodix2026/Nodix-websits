@@ -95,16 +95,20 @@ export const products = [
     subcategory: 'PV Cable Strippers',
     eyebrow: '02 / PV CABLE STRIPPERS',
     sku: 'NDX-PV-02',
-    image: '/images/products/pv-cable-stripper.jpg',
-          images: [
-           '/images/products/pv-cable-stripper-detail.jpg',
-           '/images/products/pv-cable-stripper-size.jpg',
-            '/images/products/pv-cable-stripper-use.jpg',
+   image: '/images/products/pv-cable-stripper.jpg',
+
+images: [
+  '/images/products/pv-cable-stripper-detail.jpg',
+  '/images/products/pv-cable-stripper-size.jpg',
+  '/images/products/pv-cable-stripper-use.jpg',
 ],
-    gallery: ['/images/products/pv-cable-stripper.jpg' 
-              '/images/products/pv-cable-stripper-detail.jpg',
-              '/images/products/pv-cable-stripper-size.jpg',
-              '/images/products/pv-cable-stripper-use.jpg',],
+
+gallery: [
+  '/images/products/pv-cable-stripper.jpg',
+  '/images/products/pv-cable-stripper-detail.jpg',
+  '/images/products/pv-cable-stripper-size.jpg',
+  '/images/products/pv-cable-stripper-use.jpg',
+],
     video: '',
     short: 'Precision stripping tool designed for common photovoltaic cable sizes.',
     description: 'Designed to help installers prepare PV cable cleanly and consistently before connector assembly.',
