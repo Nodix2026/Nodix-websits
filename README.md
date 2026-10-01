@@ -65,7 +65,7 @@ After the first successful deployment, connect the custom domain `nodixglobal.co
 
 The RFQ UI is intentionally independent of the delivery method. If a transactional form endpoint is added later, the same UI can be connected to a Cloudflare Pages Function or an approved form provider without redesigning the site.
 
-## Self-managed product media (V2.3)
+## Self-managed product media (V2.5)
 
 You can upload and maintain product images and videos yourself.
 
@@ -76,5 +76,12 @@ You can upload and maintain product images and videos yourself.
 
 Upload media first, then add its path to the relevant product's `gallery` or `video` field. The product detail page automatically renders the gallery and optional MP4 video.
 
-## Product catalogue hierarchy (V2.4)
+## Product catalogue hierarchy (V2.5)
 Products are organized as `category → subcategory → product`. Add new tool types under `categories` in `src/data/products.ts`; the navigation and catalogue pages will update automatically.
+
+## V2.5 visual fixes
+
+- Global stylesheet is imported from `BaseLayout.astro`, so all pages use the same visual system.
+- Product category pages use product imagery in category cards.
+- Product detail galleries use a 2-column image grid.
+- The main product image is not duplicated inside the gallery.

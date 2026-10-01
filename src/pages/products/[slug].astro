@@ -18,9 +18,9 @@ const productJsonLd = { '@context':'https://schema.org', '@type':'Product', name
           {product.image ? <img id="product-main-image" src={product.image} alt={product.name} /> : <div class="image-placeholder"><span>PRODUCT IMAGE / COMING SOON</span></div>}
           <div class="image-index">NODIX / {product.eyebrow.split(" / ")[0]}</div>
         </div>
-        {product.gallery?.length > 0 && <div class="media-thumbs" aria-label="Product image gallery">
-          {product.gallery.map((image, index) => <button class={`media-thumb ${index === 0 ? 'is-active' : ''}`} type="button" data-image={image} aria-label={`View ${product.name} image ${index + 1}`}>
-            <img src={image} alt={`${product.name} view ${index + 1}`} loading="lazy" />
+        {product.gallery?.length > 0 && <div class="detail-gallery" aria-label="Product image gallery">
+          {product.gallery.map((image, index) => <button class="detail-gallery-item" type="button" data-image={image} aria-label={`View ${product.name} image ${index + 1}`}>
+            <img src={image} alt={`${product.name} detail ${index + 1}`} loading="lazy" />
           </button>)}
         </div>}
         {product.video && <div class="product-video">
@@ -39,7 +39,7 @@ const productJsonLd = { '@context':'https://schema.org', '@type':'Product', name
   </section>
 <script>
   const mainImage = document.querySelector('#product-main-image');
-  const thumbs = document.querySelectorAll('.media-thumb');
+  const thumbs = document.querySelectorAll('.detail-gallery-item');
   thumbs.forEach((thumb) => {
     thumb.addEventListener('click', () => {
       const image = thumb.getAttribute('data-image');

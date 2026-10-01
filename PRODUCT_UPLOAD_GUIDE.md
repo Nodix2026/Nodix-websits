@@ -13,7 +13,7 @@ Recommended files for each product:
 - `product-name.jpg` — main product image
 - `product-name-detail-01.jpg` — detail view
 - `product-name-use-01.jpg` — in-use / application photo
-- `product-name-contents.jpg` — kit contents (if applicable)
+- `product-name-size.jpg` — size / specification graphic
 - `product-name-package.jpg` — packaging photo
 
 Use lowercase letters, numbers and hyphens. Avoid spaces and Chinese characters in filenames.
@@ -46,9 +46,10 @@ Each product has three media fields:
 ```ts
 image: '/images/products/pv-crimping-tool.jpg',
 gallery: [
-  '/images/products/pv-crimping-tool.jpg',
   '/images/products/pv-crimping-tool-detail-01.jpg',
-  '/images/products/pv-crimping-tool-use-01.jpg'
+  '/images/products/pv-crimping-tool-use-01.jpg',
+  '/images/products/pv-crimping-tool-size.jpg',
+  '/images/products/pv-crimping-tool-package.jpg'
 ],
 video: '/videos/products/pv-crimping-tool.mp4',
 ```
@@ -87,7 +88,7 @@ specs: [
 
 Do not invent technical specifications. Confirm them with the factory first.
 
-## 5. Product catalogue hierarchy (V2.4)
+## 5. Product catalogue hierarchy (V2.5)
 
 The catalogue now uses three practical levels:
 

@@ -1,0 +1,24 @@
+NODIX V2.5 — GITHUB UPLOAD CHECKLIST
+
+This ZIP contains the complete current project. Its contents belong directly in the GitHub repository root.
+
+IMPORTANT:
+1. Download this ZIP and unzip it.
+2. Open the unzipped Nodix-websits-main folder.
+3. Select ALL files and folders INSIDE that folder.
+4. Upload those contents into the ROOT of the GitHub repository, branch main.
+5. If GitHub asks whether to replace existing files, replace them.
+6. Commit with a message such as: Update Nodix V2.5 visual catalogue
+7. Wait for Cloudflare Pages to create a NEW Production deployment.
+8. Check the newest deployment URL first.
+
+V2.5 fixes:
+- Global CSS is imported by BaseLayout, so Products, category and product pages no longer render as plain browser HTML.
+- Contact email remains sales@nodixglobal.com.
+- Product hierarchy remains category -> subcategory -> product.
+- Products page now uses visual category cards.
+- Product detail gallery is a 2-column grid.
+- Main product image is not duplicated in the gallery.
+- Existing self-managed image/video workflow is preserved.
+
+Do not create a nested nodix-solar-v2.5 folder inside the GitHub repository.

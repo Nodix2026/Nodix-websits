@@ -1,5 +1,6 @@
 ---
 import { categories } from '../data/products';
+import '../styles/global.css';
 
 const { title = 'Nodix | Solar PV Installation Tools', description = 'Factory-backed solar PV installation tools for distributors, installers and professional buyers.', image = '/og-image.jpg' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://nodixglobal.com').toString();

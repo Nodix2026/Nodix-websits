@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { categories, products } from '../../data/products';
 
 const categoryCount = (categoryName) => products.filter((product) => product.category === categoryName).length;
+const categoryImage = (categoryName) => products.find((product) => product.category === categoryName)?.image;
 ---
 <BaseLayout title="Products | Nodix Solar PV Tools" description="Solar PV installation tools organized by product category, tool type and product reference for distributors, installers and professional buyers.">
   <section class="page-hero"><div class="kicker">NODIX / PRODUCTS</div><h1>Professional<br/>PV tools.</h1><p>A structured product catalogue for cable preparation, connector tools and installation kits. Browse by tool family first, then by specific product type and model.</p></section>
@@ -11,8 +12,8 @@ const categoryCount = (categoryName) => products.filter((product) => product.cat
     <div class="section-head"><div><span class="kicker">PRODUCT CATEGORIES</span><h2>Choose a tool family.</h2></div><p>Start with the type of PV work you need to support. Each family can grow into multiple tool types, models and configurations.</p></div>
     <div class="category-cards category-cards-four">
       {categories.map((category) => <a class="category-card" href={`/products/category/${category.slug}`}>
-        <span class="category-number">{category.number} / {String(categoryCount(category.name)).padStart(2, '0')} PRODUCTS</span>
-        <div><h3>{category.name}</h3><p>{category.description}</p></div>
+        <div class="category-card-media">{categoryImage(category.name) ? <img src={categoryImage(category.name)} alt="" loading="lazy" /> : <span>COMING SOON</span>}<span class="category-number">{category.number} / {String(categoryCount(category.name)).padStart(2, '0')} PRODUCTS</span></div>
+        <div class="category-card-body"><h3>{category.name}</h3><p>{category.description}</p></div>
         <div class="category-card-footer"><span>{category.subcategories.length} product types</span><span class="category-arrow">VIEW CATEGORY ↗</span></div>
       </a>)}
     </div>
