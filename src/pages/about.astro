@@ -1,54 +1,581 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const factoryImages = {
+  gate: '/images/factory/factory-gate.jpg',
+  engineering: '/images/factory/engineering.jpg',
+  warehouse: '/images/factory/factory-warehouse.jpg',
+  production01: '/images/factory/production-floor-01.jpg',
+  production02: '/images/factory/production-floor-02.jpg',
+  production03: '/images/factory/production-floor-03.jpg',
+  quality: '/images/factory/quality-control.jpg',
+  storage: '/images/factory/tool-storage.jpg',
+  certificationsInternational: '/images/factory/certifications-international.jpg',
+  certifications: '/images/factory/certifications.jpg',
+};
 ---
-<BaseLayout title="Our Factory | Nodix Solar PV Tools" description="Nodix factory-backed manufacturing for solar PV installation tools, OEM programs and B2B supply.">
-  <section class="page-hero">
-    <div class="kicker">NODIX / OUR FACTORY</div>
-    <h1>Built around<br/><em>real manufacturing.</em></h1>
-    <p>Nodix is focused on solar PV installation tools and supported by dedicated manufacturing capabilities in China. Our approach combines direct product development, factory production and responsive B2B supply.</p>
+
+<BaseLayout
+  title="Our Factory | Nodix Solar PV Tools"
+  description="Nodix factory-backed manufacturing for solar PV installation tools, OEM programs and B2B supply."
+>
+
+  <!-- HERO -->
+  <section class="factory-hero">
+
+    <div
+      class="factory-hero-image"
+      style={`background-image:url('${factoryImages.gate}')`}
+    ></div>
+
+    <div class="factory-hero-overlay"></div>
+
+    <div class="factory-hero-content">
+
+      <div class="kicker">NODIX / OUR FACTORY</div>
+
+      <h1>
+        Built around<br/>
+        <em>real manufacturing.</em>
+      </h1>
+
+      <p>
+        Factory-backed solar PV installation tools for distributors,
+        installers and professional buyers.
+      </p>
+
+    </div>
+
   </section>
-  <section class="section factory-metrics" style="padding-top:20px">
+
+
+  <!-- FACTORY INTRO -->
+  <section class="section factory-intro">
+
+    <div class="section-head">
+
+      <h2>
+        From production<br/>
+        <em>to the field.</em>
+      </h2>
+
+      <p>
+        Established in 2021, our manufacturing operation focuses on
+        practical solar PV installation tools, combining production,
+        product development and export-oriented supply.
+      </p>
+
+    </div>
+
+
+    <!-- METRICS -->
     <div class="metric-grid">
-      <div class="metric"><span>01</span><strong>1,500</strong><small>SQUARE METERS</small></div>
-      <div class="metric"><span>02</span><strong>74</strong><small>TEAM MEMBERS</small></div>
-      <div class="metric"><span>03</span><strong>34</strong><small>PRODUCTION MACHINES</small></div>
-      <div class="metric"><span>04</span><strong>100+</strong><small>NEW PRODUCTS / YEAR</small></div>
-    </div>
-    <div class="split">
-      <div class="dark-panel">
-        <div class="kicker">01 / MANUFACTURING</div>
-        <h3>Factory-backed<br/>product supply.</h3>
-        <p>We work from real production capabilities rather than assembling an unrelated trading catalog. Product specifications, production details and quality documentation are confirmed at factory level.</p>
+
+      <div class="metric">
+        <span>01</span>
+        <strong>1,500</strong>
+        <small>SQUARE METERS</small>
       </div>
-      <div class="dark-panel">
-        <div class="kicker">02 / PRODUCT FOCUS</div>
-        <h3>One field.<br/>One clear range.</h3>
-        <p>Our initial focus is solar PV installation tools — cable preparation, connector handling and practical field tool combinations.</p>
+
+      <div class="metric">
+        <span>02</span>
+        <strong>74</strong>
+        <small>TEAM MEMBERS</small>
       </div>
+
+      <div class="metric">
+        <span>03</span>
+        <strong>34</strong>
+        <small>PRODUCTION EQUIPMENT</small>
+      </div>
+
+      <div class="metric">
+        <span>04</span>
+        <strong>100+</strong>
+        <small>NEW MODELS / YEAR</small>
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- ENGINEERING & WAREHOUSE -->
+  <section class="section factory-section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="kicker">01 / CAPABILITY</div>
+
+        <h2>
+          Engineering,<br/>
+          storage & preparation.
+        </h2>
+      </div>
+
+      <p>
+        Product development and organized inventory support a focused
+        range of PV tools and customer-specific sourcing requirements.
+      </p>
+
+    </div>
+
+
+    <div
+      class="factory-image-grid factory-image-grid-2"
+    >
+
+      <figure class="factory-image-card">
+        <img
+          src={factoryImages.engineering}
+          alt="Nodix factory engineering and product development"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>ENGINEERING</span>
+          Product development and technical support.
+        </figcaption>
+      </figure>
+
+      <figure class="factory-image-card">
+        <img
+          src={factoryImages.warehouse}
+          alt="Nodix factory warehouse"
+          loading="lazy"
+        />
+        <figcaption>
+          <span>WAREHOUSE</span>
+          Organized storage and product preparation.
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTION -->
+  <section class="section factory-section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="kicker">02 / PRODUCTION</div>
+
+        <h2>
+          Production built<br/>
+          around the product.
+        </h2>
+      </div>
+
+      <p>
+        Manufacturing is organized around practical tool production,
+        with multiple production areas supporting product development
+        and ongoing supply.
+      </p>
+
+    </div>
+
+
+    <div class="production-gallery">
+
+      <figure class="factory-image-card production-main">
+        <img
+          src={factoryImages.production01}
+          alt="PV tool production floor"
+          loading="lazy"
+        />
+      </figure>
+
+      <figure class="factory-image-card">
+        <img
+          src={factoryImages.production02}
+          alt="PV tool manufacturing area"
+          loading="lazy"
+        />
+      </figure>
+
+      <figure class="factory-image-card">
+        <img
+          src={factoryImages.production03}
+          alt="PV tool production workshop"
+          loading="lazy"
+        />
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUALITY -->
+  <section class="section factory-section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="kicker">03 / QUALITY</div>
+
+        <h2>
+          Quality control<br/>
+          at production level.
+        </h2>
+      </div>
+
+      <p>
+        Quality checks and product handling are integrated into the
+        manufacturing process to support consistent product requirements.
+      </p>
+
+    </div>
+
+
+    <div class="factory-feature-grid">
+
+      <figure class="factory-image-card">
+        <img
+          src={factoryImages.quality}
+          alt="Quality control at Nodix factory"
+          loading="lazy"
+        />
+
+        <figcaption>
+          <span>QUALITY CONTROL</span>
+          Product inspection and production-level quality checks.
+        </figcaption>
+      </figure>
+
+
+      <figure class="factory-image-card">
+        <img
+          src={factoryImages.storage}
+          alt="PV tools organized in factory storage"
+          loading="lazy"
+        />
+
+        <figcaption>
+          <span>TOOL MANAGEMENT</span>
+          Organized products and tool configurations.
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <!-- CERTIFICATIONS -->
+  <section class="section factory-section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="kicker">04 / CERTIFICATIONS</div>
+
+        <h2>
+          Documentation<br/>
+          behind the products.
+        </h2>
+      </div>
+
+      <p>
+        Factory documentation includes applicable certifications,
+        product credentials and intellectual-property records.
+        Specific documentation will be shown with the relevant products.
+      </p>
+
+    </div>
+
+
+    <div class="certification-gallery">
+
+      <figure class="certificate-card">
+        <img
+          src={factoryImages.certificationsInternational}
+          alt="International factory certifications"
+          loading="lazy"
+        />
+      </figure>
+
+      <figure class="certificate-card">
+        <img
+          src={factoryImages.certifications}
+          alt="Factory certifications and credentials"
+          loading="lazy"
+        />
+      </figure>
+
+    </div>
+
+
+    <div class="cert-row">
+      <span>CE</span>
+      <span>VOC</span>
+      <span>UKCA</span>
+      <span>2 PATENTS</span>
+    </div>
+
+  </section>
+
+
+  <!-- OEM -->
   <section class="section">
-    <div class="section-head"><h2>From factory<br/>to field.</h2><p>The goal is simple: make it easier for distributors, installers and professional buyers to source practical PV tools from China.</p></div>
-    <div class="workflow-grid">
-      <div class="step"><b>01</b><h3>PRODUCT</h3><p>Focused PV tools designed around real installation tasks.</p></div>
-      <div class="step"><b>02</b><h3>PRODUCTION</h3><p>Factory production with product-level specification and quality control.</p></div>
-      <div class="step"><b>03</b><h3>SUPPLY</h3><p>Flexible B2B quantities, packaging and sourcing discussions.</p></div>
-      <div class="step"><b>04</b><h3>GLOBAL</h3><p>Supporting distributors, installers and professional buyers in international markets.</p></div>
+
+    <div class="factory-oem">
+
+      <div>
+
+        <div class="kicker">05 / OEM & PRIVATE LABEL</div>
+
+        <h2>
+          Your brand.<br/>
+          <em>Our production capability.</em>
+        </h2>
+
+        <p>
+          For distributor programs and private-label projects, we can
+          discuss product selection, logo application, packaging,
+          documentation and practical tool combinations around your
+          target market.
+        </p>
+
+      </div>
+
+      <a class="btn primary" href="/contact">
+        Discuss Your Requirement ↗
+      </a>
+
     </div>
+
   </section>
-  <section class="section">
-    <div class="section-head"><h2>Built for<br/>global supply.</h2><p>Established in 2021, the factory supports international customers with focused production, product development and export-oriented supply.</p></div>
-    <div class="split">
-      <div class="dark-panel"><div class="kicker">QUALITY & COMPLIANCE</div><h3>Documented.<br/>Product by product.</h3><p>Current factory documentation includes CE, VOC and UKCA-related credentials. Product pages will show the specific documentation applicable to each item as the technical files are organized.</p><div class="cert-row"><span>CE</span><span>VOC</span><span>UKCA</span></div></div>
-      <div class="dark-panel"><div class="kicker">PRODUCT DEVELOPMENT</div><h3>100+ new products<br/>developed each year.</h3><p>Product development is part of the manufacturing capability, allowing the range to evolve around customer requirements, applications and new tool combinations.</p><div class="cert-row"><span>2 PATENTS</span><span>OEM</span><span>PRIVATE LABEL</span></div></div>
+
+
+  <!-- CTA -->
+  <section class="cta-band">
+
+    <div class="cta-inner">
+
+      <h2>
+        Looking for a factory-backed<br/>
+        PV tool supplier?
+      </h2>
+
+      <a class="btn" href="/contact">
+        Request a Quote ↗
+      </a>
+
     </div>
-    <div class="split" style="margin-top:14px">
-      <div class="dark-panel"><div class="kicker">GLOBAL MARKET</div><h3>International<br/>export experience.</h3><p>The factory serves international markets and can support export-oriented packaging, documentation and product requirements.</p></div>
-      <div class="dark-panel"><div class="kicker">QUALITY & DOCUMENTATION</div><h3>Evidence before claims.</h3><p>As factory documentation is organized, product pages will be expanded with verified specifications, applicable certificates, test documents and quality information.</p></div>
-    </div>
-    <div class="dark-panel factory-oem">
-      <div class="kicker">OEM / PRIVATE LABEL</div><h3>Your brand.<br/>Our production capability.</h3><p>For distributor programs and private-label projects, we can discuss product selection, logo application, packaging and tool combinations around your target market.</p><a class="btn primary" href="/contact">Discuss Your Requirement ↗</a>
-    </div>
+
   </section>
-  <section class="cta-band"><div class="cta-inner"><h2>Looking for a factory-backed PV tool supplier?</h2><a class="btn" href="/contact">Request a Quote ↗</a></div></section>
+
+
+  <style>
+
+    .factory-hero {
+      position:relative;
+      min-height:620px;
+      display:flex;
+      align-items:flex-end;
+      overflow:hidden;
+      margin-bottom:0;
+    }
+
+    .factory-hero-image {
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .factory-hero-overlay {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.82) 0%,
+        rgba(0,0,0,.55) 45%,
+        rgba(0,0,0,.18) 100%
+      );
+    }
+
+    .factory-hero-content {
+      position:relative;
+      z-index:2;
+      max-width:760px;
+      padding:100px 6vw 90px;
+    }
+
+    .factory-hero h1 {
+      margin:16px 0 24px;
+      font-size:clamp(48px,7vw,92px);
+      line-height:.94;
+    }
+
+    .factory-hero p {
+      max-width:600px;
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .factory-intro {
+      padding-bottom:40px;
+    }
+
+    .factory-section {
+      padding-top:80px;
+      padding-bottom:80px;
+    }
+
+    .factory-image-grid-2 {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .factory-image-card {
+      margin:0;
+      overflow:hidden;
+      background:#141412;
+    }
+
+    .factory-image-card img {
+      width:100%;
+      display:block;
+      aspect-ratio:16/9;
+      object-fit:cover;
+    }
+
+    .factory-image-card figcaption {
+      padding:18px 20px 20px;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .factory-image-card figcaption span {
+      display:block;
+      margin-bottom:6px;
+      font-size:11px;
+      letter-spacing:.12em;
+      font-weight:700;
+    }
+
+    .production-gallery {
+      display:grid;
+      grid-template-columns:1.5fr 1fr;
+      grid-template-rows:1fr 1fr;
+      gap:20px;
+    }
+
+    .production-main {
+      grid-row:1 / 3;
+    }
+
+    .production-gallery .factory-image-card img {
+      height:100%;
+      min-height:220px;
+    }
+
+    .factory-feature-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .certification-gallery {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .certificate-card {
+      margin:0;
+      padding:18px;
+      background:#151513;
+      overflow:hidden;
+    }
+
+    .certificate-card img {
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+    }
+
+    .cert-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:24px;
+    }
+
+    .cert-row span {
+      padding:10px 16px;
+      border:1px solid rgba(255,255,255,.18);
+      font-size:12px;
+      letter-spacing:.08em;
+    }
+
+    .factory-oem {
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:40px;
+      padding:50px;
+      background:#151513;
+    }
+
+    .factory-oem h2 {
+      margin:12px 0 20px;
+      font-size:clamp(36px,5vw,64px);
+      line-height:1;
+    }
+
+    .factory-oem p {
+      max-width:680px;
+      line-height:1.7;
+    }
+
+    @media (max-width:800px) {
+
+      .factory-hero {
+        min-height:540px;
+      }
+
+      .factory-hero-content {
+        padding:80px 24px 60px;
+      }
+
+      .factory-image-grid-2,
+      .factory-feature-grid,
+      .certification-gallery {
+        grid-template-columns:1fr;
+      }
+
+      .production-gallery {
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+      }
+
+      .production-main {
+        grid-row:auto;
+      }
+
+      .production-gallery .factory-image-card img {
+        height:auto;
+        min-height:0;
+      }
+
+      .factory-oem {
+        flex-direction:column;
+        align-items:flex-start;
+        padding:32px 24px;
+      }
+
+    }
+
+  </style>
+
 </BaseLayout>
