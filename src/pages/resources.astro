@@ -1,16 +1,171 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { resources } from '../data/resources';
+
+const resourceCards = [
+  {
+    number: '01',
+    title: 'Product Catalog',
+    intro: 'Browse the Nodix PV tool range, including cable preparation tools, connector tools and installation kits.',
+    image: '/images/resources/product-catalog.png',
+  },
+  {
+    number: '02',
+    title: 'Technical Specifications',
+    intro: 'Review key product specifications, compatibility information and configuration details for professional sourcing.',
+    image: '/images/resources/technical-specifications.png',
+  },
+  {
+    number: '03',
+    title: 'Installation Guides',
+    intro: 'Practical guidance for cable preparation, connector assembly and common PV installation tasks.',
+    image: '/images/resources/installation-guides.png',
+  },
+  {
+    number: '04',
+    title: 'OEM / Private Label',
+    intro: 'Learn how we support private-label programs with product selection, logo application, packaging and documentation.',
+    image: '/images/resources/oem-private-label.png',
+  },
+];
 ---
-<BaseLayout title="Resources | Nodix Solar PV Tools" description="PV installation tool guides, buying checklists and practical resources from Nodix.">
-  <section class="page-hero"><div class="kicker">NODIX / RESOURCES</div><h1>PV knowledge,<br/><em>without the noise.</em></h1><p>Practical resources for distributors, installers and professional buyers — focused on the tools used around cable preparation, connector assembly and field installation.</p></section>
-  <section class="section" style="padding-top:20px">
-    <div class="resource-grid">
-      {resources.map((resource) => <a class="resource resource-link" href={`/resources/${resource.slug}`}><small>{resource.type} / {resource.number}</small><h3>{resource.title}</h3><p>{resource.intro}</p><span>Read guide ↗</span></a>)}
-      <article class="resource"><small>FAQ / 04</small><h3>What should I send for a quotation?</h3><p>Product reference, quantity, cable size, connector system, packaging and target market are useful starting points.</p></article>
-      <article class="resource"><small>OEM / 05</small><h3>Private-label PV tool programs</h3><p>Define the product combination first, then work through logo application, packaging, documentation and quantity.</p></article>
-      <article class="resource"><small>BUYING / 06</small><h3>PV tool specification checklist</h3><p>Compare construction, compatibility, size range, packaging, documentation and sample availability before placing an order.</p></article>
-    </div>
+
+<BaseLayout
+  title="Resources | Nodix Solar PV Tools"
+  description="PV installation tool guides, product information and practical resources from Nodix."
+>
+
+  <section class="page-hero">
+    <div class="kicker">NODIX / RESOURCES</div>
+
+    <h1>
+      Practical resources<br/>
+      <em>for the PV field.</em>
+    </h1>
+
+    <p>
+      Product information, technical references and practical guidance
+      for distributors, installers and professional buyers.
+    </p>
   </section>
-  <section class="cta-band"><div class="cta-inner"><h2>Need help defining a tool range?</h2><a class="btn" href="/contact">Start a Conversation ↗</a></div></section>
+
+
+  <section class="section" style="padding-top:20px">
+
+    <div
+      class="resource-grid"
+      style="
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:24px;
+      "
+    >
+
+      {resourceCards.map((resource) => (
+        <article
+          class="resource resource-card"
+          style="
+            overflow:hidden;
+            padding:0;
+          "
+        >
+
+          <div
+            class="resource-image"
+            style="
+              width:100%;
+              aspect-ratio:16/9;
+              overflow:hidden;
+              background:#151513;
+            "
+          >
+            <img
+              src={resource.image}
+              alt={resource.title}
+              loading="lazy"
+              style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                display:block;
+              "
+            />
+          </div>
+
+          <div
+            class="resource-content"
+            style="
+              padding:28px 30px 30px;
+            "
+          >
+
+            <small>
+              RESOURCE / {resource.number}
+            </small>
+
+            <h3>
+              {resource.title}
+            </h3>
+
+            <p>
+              {resource.intro}
+            </p>
+
+            <span
+              style="
+                display:inline-block;
+                margin-top:8px;
+                font-size:14px;
+                font-weight:600;
+                letter-spacing:.04em;
+              "
+            >
+              EXPLORE RESOURCE ↗
+            </span>
+
+          </div>
+
+        </article>
+      ))}
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-head">
+
+      <h2>
+        Need something<br/>
+        more specific?
+      </h2>
+
+      <p>
+        If you are looking for a specific product specification,
+        installation reference, packaging requirement or OEM solution,
+        send us the information you already have and we can work from there.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="cta-band">
+
+    <div class="cta-inner">
+
+      <h2>
+        Have a specific requirement?
+      </h2>
+
+      <a class="btn" href="/contact">
+        Start a Conversation ↗
+      </a>
+
+    </div>
+
+  </section>
+
 </BaseLayout>
