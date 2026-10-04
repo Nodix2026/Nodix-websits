@@ -203,14 +203,14 @@ export const products = [
       ['Packaging', 'Box / pouch / custom packaging'],
       ['MOQ', 'Discuss by configuration']
     ]
-      {
+  }，
+  {
     slug: 'mc4-solar-cable-crimping-tool-a-2546b',
     name: 'MC4 Solar Cable Crimping Tool',
     category: 'Connector Tools',
     subcategory: 'PV Crimping Tools',
     eyebrow: '06 / PV CRIMPING TOOLS',
     sku: 'A-2546B',
-
     image: '/images/products/mc4-solar-cable-crimping-tool-a-2546b.jpg',
 
     gallery: [
@@ -220,11 +220,8 @@ export const products = [
     ],
 
     video: '',
-
     short: 'Professional ratchet crimping tool for 2.5–6.0 mm² solar PV cable and MC4 connector assembly.',
-
     description: 'A professional manual ratchet crimping tool designed for reliable crimping of 2.5–6.0 mm² photovoltaic cable for MC4 connector assembly.',
-
     highlights: [
       '2.5–6.0 mm² crimping range',
       '13–10 AWG compatibility',
@@ -232,9 +229,7 @@ export const products = [
       '270 mm tool length',
       'Packaging / branding options'
     ],
-
     variants: [],
-
     specs: [
       ['Model', 'A-2546B'],
       ['Application', 'Solar PV installation'],
@@ -246,7 +241,6 @@ export const products = [
       ['Weight', '0.73 kg'],
       ['Customization', 'Packaging / branding available']
     ]
-  },
   }
 ];
 
