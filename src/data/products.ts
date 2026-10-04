@@ -203,7 +203,7 @@ export const products = [
       ['Packaging', 'Box / pouch / custom packaging'],
       ['MOQ', 'Discuss by configuration']
     ]
-  }，
+   },
   {
     slug: 'mc4-solar-cable-crimping-tool-a-2546b',
     name: 'MC4 Solar Cable Crimping Tool',
