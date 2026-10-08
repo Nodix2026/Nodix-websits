@@ -241,6 +241,49 @@ export const products = [
       ['Weight', '0.73 kg'],
       ['Customization', 'Packaging / branding available']
     ]
+     },
+    {
+    slug: 'Photovoltaic-wire-strippers-N-S02',
+    name: 'Photovoltaic-wire-strippers',
+    category: 'Cable Preparation',
+    subcategory: 'PV Cable Strippers',
+    eyebrow: '07 / PV CABLE STRIPPERS',
+    sku: 'N-S02',
+
+    image: '/images/products/Photovoltaic-wire-strippers-N-S02.jpg',
+
+    gallery: [
+      '/images/products/Photovoltaic-wire-strippers-N-S02-detail.jpg',
+      '/images/products/Photovoltaic-wire-strippers-N-S02-size.jpg',
+      '/images/products/Photovoltaic-wire-strippers-N-S02-use.jpg',
+    ],
+
+    video: '',
+
+    short: 'Professional tool for 1.6-3.2 mm² solar PV cable and MC4 wire strippers.',
+
+    description: 'A professional wire stripper tool designed for reliable stripping of 1.6–3.2 mm² photovoltaic cable for MC4 connector assembly.',
+
+    highlights: [
+      '1.6–3.2 mm² crimping range',
+      '8–14 AWG compatibility',
+      '180 mm tool length',
+      'Packaging / branding options'
+    ],
+
+    variants: [],
+
+    specs: [
+      ['Model', 'N-S02'],
+      ['Application', 'Solar PV installation'],
+      ['Tool type', 'MC4 / PV connector Strippers tool'],
+      ['Operation', 'Hand'],
+      ['Crimping range', '1.6–3.2 mm²'],
+      ['US wire gauge', '8–14 AWG'],
+      ['Length', '180 mm'],
+      ['Weight', '0.3 kg'],
+      ['Customization', 'Packaging / branding available']
+    ]
   }
 ];
 
