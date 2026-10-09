@@ -242,47 +242,46 @@ export const products = [
       ['Customization', 'Packaging / branding available']
     ]
      },
-    {
-    slug: 'Photovoltaic-wire-strippers-N-S02',
-    name: 'Photovoltaic-wire-strippers',
-    category: 'Cable Preparation',
-    subcategory: 'PV Cable Strippers',
-    eyebrow: '07 / PV CABLE STRIPPERS',
-    sku: 'N-S02',
+   
+  {
+    slug: 'pv-installer-tool-kit-02',
+    name: 'PV Installer Tool Kit 02',
+    category: 'Installation Kits',
+    subcategory: 'PV Installer Tool Kits',
+    eyebrow: '07 / PV INSTALLER TOOL KITS',
+    sku: 'K-N02',
 
-    image: '/images/products/Photovoltaic-wire-strippers-N-S02.jpg',
+    image: '/images/products/pv-installer-tool-kit-02.jpg',
 
     gallery: [
-      '/images/products/Photovoltaic-wire-strippers-N-S02-detail.jpg',
-      '/images/products/Photovoltaic-wire-strippers-N-S02-size.jpg',
-      '/images/products/Photovoltaic-wire-strippers-N-S02-use.jpg',
+      '/images/products/pv-installer-tool-kit-02-use.jpg',
+      '/images/products/pv-installer-tool-kit-02-detail.jpg',
+      '/images/products/pv-installer-tool-kit-02-size.jpg',
     ],
 
     video: '',
 
-    short: 'Professional tool for 1.6-3.2 mm² solar PV cable and MC4 wire strippers.',
+    short: 'A practical solar PV installation kit featuring crimping pliers, MC4 connectors and connector wrenches.',
 
-    description: 'A professional wire stripper tool designed for reliable stripping of 1.6–3.2 mm² photovoltaic cable for MC4 connector assembly.',
+    description: 'Designed for solar PV installation and connector assembly, this tool kit combines crimping pliers, a set of MC4 connectors and MC4 wrenches in one package.',
 
     highlights: [
-      '1.6–3.2 mm² crimping range',
-      '8–14 AWG compatibility',
-      '180 mm tool length',
-      'Packaging / branding options'
+      'Crimping pliers included',
+      'MC4 connector set included',
+      'MC4 wrenches included',
+      'Compact kit packaging',
+      'Suitable for PV installation work'
     ],
 
     variants: [],
 
     specs: [
-      ['Model', 'N-S02'],
+      ['Model', 'K-N02'],
       ['Application', 'Solar PV installation'],
-      ['Tool type', 'MC4 / PV connector Strippers tool'],
-      ['Operation', 'Hand'],
-      ['Crimping range', '1.6–3.2 mm²'],
-      ['US wire gauge', '8–14 AWG'],
-      ['Length', '180 mm'],
-      ['Weight', '0.3 kg'],
-      ['Customization', 'Packaging / branding available']
+      ['Kit contents', 'Crimping pliers, MC4 connector set, MC4 wrenches'],
+      ['Package dimensions', '29 × 19 × 7 cm'],
+      ['Weight', '3.80 kg'],
+      ['Customization', 'Confirm packaging / branding options']
     ]
   }
 ];
